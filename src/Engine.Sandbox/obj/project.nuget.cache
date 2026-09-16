@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "mKg0d1ICb4I=",
+  "success": true,
+  "projectFilePath": "/mnt/hdd2/ugc-platform/src/Engine.Sandbox/Engine.Sandbox.csproj",
+  "expectedPackageFiles": [
+    "/home/yaroslav/.nuget/packages/microsoft.aspnetcore.app.ref/10.0.11/microsoft.aspnetcore.app.ref.10.0.11.nupkg.sha512"
+  ],
+  "logs": []
+}

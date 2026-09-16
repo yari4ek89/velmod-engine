@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "EVW5bP3vOZw=",
+  "success": true,
+  "projectFilePath": "/mnt/hdd2/ugc-platform/src/Engine.Core/Engine.Core.csproj",
+  "expectedPackageFiles": [
+    "/home/yaroslav/.nuget/packages/microsoft.aspnetcore.app.ref/10.0.11/microsoft.aspnetcore.app.ref.10.0.11.nupkg.sha512"
+  ],
+  "logs": []
+}
