@@ -21,7 +21,7 @@ public class Scene
         return _gameObjects.Remove(gameObject);
     }
 
-    public void Update(float deltaTime)
+    public void Update(double deltaTime)
     {
         foreach (var gameObject in _gameObjects)
         {

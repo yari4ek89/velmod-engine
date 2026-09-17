@@ -10,7 +10,7 @@ public class PlayerMovement : Component, IUpdatable
         
     }
     
-    public void Update(float deltaTime)
+    public void Update(double deltaTime)
     {
         GameObject.Transform.X += Speed * deltaTime;
     }

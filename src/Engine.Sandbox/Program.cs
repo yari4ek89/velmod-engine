@@ -17,7 +17,5 @@ EngineRuntime engineRuntime = new EngineRuntime(firstLevel);
 
 player.AddComponent(x => new PlayerMovement(x));
 Console.WriteLine(player.Transform.X);
-engineRuntime.Tick(1f / 60f);
-engineRuntime.Tick(1f / 60f);
-engineRuntime.Tick(1f / 60f);
+engineRuntime.Run(60);
 Console.WriteLine(player.Transform.X);

@@ -62,7 +62,7 @@ public class GameObject
         return null;
     }
 
-    public void Update(float deltaTime)
+    public void Update(double deltaTime)
     {
         foreach (var component in _components)
         {
