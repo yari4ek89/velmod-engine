@@ -1,6 +1,7 @@
 <Solution>
   <Folder Name="/src/">
     <Project Path="src/Engine.Core/Engine.Core.csproj" />
+    <Project Path="src/Engine.Native/Engine.Native.csproj" />
     <Project Path="src/Engine.Sandbox/Engine.Sandbox.csproj" />
   </Folder>
 </Solution>
