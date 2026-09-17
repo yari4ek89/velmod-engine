@@ -13,9 +13,11 @@ enemy.Transform.Y = 50f;
 firstLevel.Add(player);
 firstLevel.Add(enemy);
 
+EngineRuntime engineRuntime = new EngineRuntime(firstLevel);
+
 player.AddComponent(x => new PlayerMovement(x));
 Console.WriteLine(player.Transform.X);
-firstLevel.Update(1f / 60f);
-firstLevel.Update(1f / 60f);
-firstLevel.Update(1f / 60f);
+engineRuntime.Tick(1f / 60f);
+engineRuntime.Tick(1f / 60f);
+engineRuntime.Tick(1f / 60f);
 Console.WriteLine(player.Transform.X);

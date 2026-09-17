@@ -16,3 +16,4 @@
 /mnt/hdd2/ugc-platform/src/Engine.Sandbox/obj/Debug/net10.0/Engine.Sandbox.pdb
 /mnt/hdd2/ugc-platform/src/Engine.Sandbox/obj/Debug/net10.0/Engine.Sandbox.genruntimeconfig.cache
 /mnt/hdd2/ugc-platform/src/Engine.Sandbox/obj/Debug/net10.0/ref/Engine.Sandbox.dll
+/mnt/hdd2/ugc-platform/src/Engine.Sandbox/obj/Debug/net10.0/Engine.Sandbox.sourcelink.json
