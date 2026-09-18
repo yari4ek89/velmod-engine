@@ -398,6 +398,10 @@
             "Silk.NET.Windowing": {
               "target": "Package",
               "version": "[2.23.0, )"
+            },
+            "StbImageSharp": {
+              "target": "Package",
+              "version": "[2.30.16, )"
             }
           },
           "imports": [

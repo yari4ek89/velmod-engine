@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ujQg0Rn7xHc=",
+  "dgSpecHash": "qe/OJoT1zK4=",
   "success": true,
   "projectFilePath": "/mnt/hdd2/ugc-platform/src/Engine.Native/Engine.Native.csproj",
   "expectedPackageFiles": [
@@ -13,6 +13,7 @@
     "/home/yaroslav/.nuget/packages/silk.net.windowing/2.23.0/silk.net.windowing.2.23.0.nupkg.sha512",
     "/home/yaroslav/.nuget/packages/silk.net.windowing.common/2.23.0/silk.net.windowing.common.2.23.0.nupkg.sha512",
     "/home/yaroslav/.nuget/packages/silk.net.windowing.glfw/2.23.0/silk.net.windowing.glfw.2.23.0.nupkg.sha512",
+    "/home/yaroslav/.nuget/packages/stbimagesharp/2.30.16/stbimagesharp.2.30.16.nupkg.sha512",
     "/home/yaroslav/.nuget/packages/ultz.native.glfw/3.4.0/ultz.native.glfw.3.4.0.nupkg.sha512",
     "/home/yaroslav/.nuget/packages/microsoft.aspnetcore.app.ref/10.0.11/microsoft.aspnetcore.app.ref.10.0.11.nupkg.sha512"
   ],

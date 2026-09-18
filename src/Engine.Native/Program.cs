@@ -11,16 +11,29 @@ static class Program
 {
     private static GL _gl = null!;
     private static IWindow _window = null!;
-    private static uint _vao;
     private static ShaderProgram _shaderProgram = null!;
+    private static Renderer2D _renderer2D = null!;
     
     static void Main()
     {
         Scene firstLevel = new Scene("First Level");
+        
         GameObject player = new GameObject("Player");
         PlayerMovement playerMovement = player.AddComponent(x => new PlayerMovement(x));
-        playerMovement.Speed = 0.1f;
+        playerMovement.Speed = 100f;
+        SpriteRenderer spriteRenderer = player.AddComponent(x => new SpriteRenderer(x, "/mnt/hdd2/ugc-platform/src/Engine.Native/test.png"));
+        player.Transform.X = 200f;
+        player.Transform.Y = 300f;
+        
+        GameObject enemy = new GameObject("Enemy");
+        PlayerMovement enemyMovement = enemy.AddComponent(x => new PlayerMovement(x));
+        enemyMovement.Speed = 50f;
+        SpriteRenderer spriteRenderer1 = enemy.AddComponent(x => new SpriteRenderer(x, "/mnt/hdd2/ugc-platform/src/Engine.Native/test.png"));
+        enemy.Transform.X = 600f;
+        enemy.Transform.Y = 300f;
+        
         firstLevel.Add(player);
+        firstLevel.Add(enemy);
         EngineRuntime engineRuntime = new EngineRuntime(firstLevel);
         
         WindowOptions options = WindowOptions.Default with
@@ -32,9 +45,8 @@ static class Program
         _window.Update += x => OnUpdate(x, engineRuntime);
         Console.WriteLine(player.Transform.X);
         _window.Load += OnLoad;
-        _window.Render += x => OnRender(x, player);
+        _window.Render += x => OnRender(x, firstLevel);
         _window.Run();
-        Console.WriteLine(player.Transform.X);
     }
 
     static void OnUpdate(double deltaTime, EngineRuntime engineRuntime)
@@ -47,42 +59,13 @@ static class Program
         _gl = _window.CreateOpenGL();
         _gl.ClearColor(Color.CornflowerBlue);
         _shaderProgram = new ShaderProgram(_gl);
-        GeometryProcessing();
+        _renderer2D = new Renderer2D(_gl, _shaderProgram);
         _shaderProgram.ShaderProcess("/mnt/hdd2/ugc-platform/src/Engine.Native/Shaders/basic.vert", 
             "/mnt/hdd2/ugc-platform/src/Engine.Native/Shaders/basic.frag");
     }
 
-    static void OnRender(double deltaTime, GameObject player)
+    static void OnRender(double deltaTime, Scene scene)
     {
-        _gl.Clear(ClearBufferMask.ColorBufferBit);
-        
-        _shaderProgram.Use();
-        _shaderProgram.SetVector2(
-            "uPosition",
-            (float)player.Transform.X,
-            (float)player.Transform.Y
-            );
-        
-        _gl.BindVertexArray(_vao);
-        _gl.DrawArrays(PrimitiveType.Triangles, 0, 3);
-    }
-
-    static unsafe void GeometryProcessing()
-    {
-        float[] vertices =
-        {
-            0.0f, 0.5f,
-            -0.5f, -0.5f,
-            0.5f, -0.5f
-        };
-
-        uint vbo = _gl.GenBuffer();
-        _gl.BindBuffer(BufferTargetARB.ArrayBuffer, vbo);
-        _gl.BufferData(BufferTargetARB.ArrayBuffer, (uint)(sizeof(float) * vertices.Length), vertices, BufferUsageARB.StaticDraw);
-
-        _vao = _gl.GenVertexArray();
-        _gl.BindVertexArray(_vao);
-        _gl.VertexAttribPointer(0u, 2, VertexAttribPointerType.Float, false, (uint)(2 * sizeof(float)), (void*)(0));
-        _gl.EnableVertexAttribArray(0);
+        _renderer2D.Render(_window.Size.X, _window.Size.Y, scene);
     }
 }

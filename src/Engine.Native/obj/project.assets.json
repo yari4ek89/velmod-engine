@@ -136,6 +136,15 @@
           }
         }
       },
+      "StbImageSharp/2.30.16": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/StbImageSharp.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/StbImageSharp.dll": {}
+        }
+      },
       "Ultz.Native.GLFW/3.4.0": {
         "type": "package",
         "compile": {
@@ -381,6 +390,20 @@
         "silkdotnet_v3.png"
       ]
     },
+    "StbImageSharp/2.30.16": {
+      "sha512": "qg1i+NHihXVKLKYacGKrauhSQIGL31eBWcTC4Vc7jnGmBFj87LkRuCdXB5aDZisWMRnB6x2mcfwYXQxMWEG/lw==",
+      "type": "package",
+      "path": "stbimagesharp/2.30.16",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net471/StbImageSharp.dll",
+        "lib/net8.0/StbImageSharp.dll",
+        "lib/netstandard2.0/StbImageSharp.dll",
+        "stbimagesharp.2.30.16.nupkg.sha512",
+        "stbimagesharp.nuspec"
+      ]
+    },
     "Ultz.Native.GLFW/3.4.0": {
       "sha512": "Iy22JopynbOJ32vA0lBhFEzGi65GQJBuJHYBYRBpydrDpNoTiHnjIXfA65Gu+8qsOr/ZEoIF8r9aHCgAXuO6DA==",
       "type": "package",
@@ -415,7 +438,8 @@
     "net10.0": [
       "Engine.Core >= 1.0.0",
       "Silk.NET.OpenGL >= 2.23.0",
-      "Silk.NET.Windowing >= 2.23.0"
+      "Silk.NET.Windowing >= 2.23.0",
+      "StbImageSharp >= 2.30.16"
     ]
   },
   "packageFolders": {
@@ -474,6 +498,10 @@
           "Silk.NET.Windowing": {
             "target": "Package",
             "version": "[2.23.0, )"
+          },
+          "StbImageSharp": {
+            "target": "Package",
+            "version": "[2.30.16, )"
           }
         },
         "imports": [
